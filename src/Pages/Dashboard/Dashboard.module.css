@@ -1,0 +1,9 @@
+.dashboardPage {
+}
+@media (min-width: 480px) {
+  .dashboardPage {
+    display: grid;
+    grid-template-rows: 80px auto;
+    grid-template-columns: 1fr 2fr 3fr;
+  }
+}

@@ -1,0 +1,22 @@
+.nav {
+  background: #011393;
+  padding: 24px 0;
+}
+
+.nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 40px;
+}
+
+.nav a.active,
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 480px) {
+  .nav {
+    height: calc(100vh - 80px);
+  }
+}
