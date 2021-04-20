@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/contact-list-react-app/static/css/main.d0810e1a.chunk.css",
+    "main.js": "/contact-list-react-app/static/js/main.99d04978.chunk.js",
+    "main.js.map": "/contact-list-react-app/static/js/main.99d04978.chunk.js.map",
+    "runtime-main.js": "/contact-list-react-app/static/js/runtime-main.a1d7ef8a.js",
+    "runtime-main.js.map": "/contact-list-react-app/static/js/runtime-main.a1d7ef8a.js.map",
+    "static/js/2.cc0153db.chunk.js": "/contact-list-react-app/static/js/2.cc0153db.chunk.js",
+    "static/js/2.cc0153db.chunk.js.map": "/contact-list-react-app/static/js/2.cc0153db.chunk.js.map",
+    "static/js/3.09a526d8.chunk.js": "/contact-list-react-app/static/js/3.09a526d8.chunk.js",
+    "static/js/3.09a526d8.chunk.js.map": "/contact-list-react-app/static/js/3.09a526d8.chunk.js.map",
+    "index.html": "/contact-list-react-app/index.html",
+    "static/css/main.d0810e1a.chunk.css.map": "/contact-list-react-app/static/css/main.d0810e1a.chunk.css.map",
+    "static/js/2.cc0153db.chunk.js.LICENSE.txt": "/contact-list-react-app/static/js/2.cc0153db.chunk.js.LICENSE.txt",
+    "static/media/edit_icon.85c850b9.svg": "/contact-list-react-app/static/media/edit_icon.85c850b9.svg",
+    "static/media/icon_error.8d19d611.svg": "/contact-list-react-app/static/media/icon_error.8d19d611.svg",
+    "static/media/Login.module.css": "/contact-list-react-app/static/media/phone_app_hero.c813549d.png",
+    "static/media/pink_phone_logo.6469b354.png": "/contact-list-react-app/static/media/pink_phone_logo.6469b354.png",
+    "static/media/pink_phone_logo_white.f1d29c97.svg": "/contact-list-react-app/static/media/pink_phone_logo_white.f1d29c97.svg",
+    "static/media/search_icon.bcfd0f18.svg": "/contact-list-react-app/static/media/search_icon.bcfd0f18.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1d7ef8a.js",
+    "static/js/2.cc0153db.chunk.js",
+    "static/css/main.d0810e1a.chunk.css",
+    "static/js/main.99d04978.chunk.js"
+  ]
+}
