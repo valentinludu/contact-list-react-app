@@ -1,6 +1,7 @@
 # Getting Started with Contact List React App
 
 This is a proof of concept for a contact list app project.
+You can check out the project here: https://valentinludu.github.io/contact-list-react-app/
 This project was bootstrapped with [Create React App].
 
 ## Available Scripts
