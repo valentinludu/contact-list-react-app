@@ -20,15 +20,15 @@ const App = () => {
   
   return (
     <ContactListContext.Provider value={{ contactListApp, setContactListApp }}>
-      <Router>
+      <Router basename="/contact-list-react-app/">
         <Switch>
+          <Route path="/">
           <Route exact path="/login">
             <Login />
           </Route>
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
