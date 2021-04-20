@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/contact-list-react-app/static/css/main.d0810e1a.chunk.css",
-    "main.js": "/contact-list-react-app/static/js/main.a1ef5da4.chunk.js",
-    "main.js.map": "/contact-list-react-app/static/js/main.a1ef5da4.chunk.js.map",
+    "main.js": "/contact-list-react-app/static/js/main.fe45f5bc.chunk.js",
+    "main.js.map": "/contact-list-react-app/static/js/main.fe45f5bc.chunk.js.map",
     "runtime-main.js": "/contact-list-react-app/static/js/runtime-main.a1d7ef8a.js",
     "runtime-main.js.map": "/contact-list-react-app/static/js/runtime-main.a1d7ef8a.js.map",
     "static/js/2.cc0153db.chunk.js": "/contact-list-react-app/static/js/2.cc0153db.chunk.js",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.a1d7ef8a.js",
     "static/js/2.cc0153db.chunk.js",
     "static/css/main.d0810e1a.chunk.css",
-    "static/js/main.a1ef5da4.chunk.js"
+    "static/js/main.fe45f5bc.chunk.js"
   ]
 }
