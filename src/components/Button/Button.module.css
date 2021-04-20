@@ -1,0 +1,16 @@
+.customButton {
+  color: #fff;
+  text-align: center;
+  border-radius: 24px;
+  margin: auto;
+  padding: 9px 19px;
+  border: 0;
+  font-size: 12px;
+  font-weight: bold;
+  width: auto;
+  display: block;
+}
+.customButton.customButtonFullWidth {
+  width: 100%;
+  padding: 17px 10px;
+}
