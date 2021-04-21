@@ -1,12 +1,9 @@
 {
   "name": "contact-list-react-app",
   "version": "0.1.0",
-  "homepage": "https://valentinludu.github.io/contact-list-react-app/",
-  "private": true,
+  "homepage": "https://valentinludu.github.io/contact-list-react-app",
+  "home": "https://valentinludu.github.io/contact-list-react-app",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "formik": "2.2.6",
     "gh-pages": "^3.1.0",
     "react": "^17.0.2",

@@ -1,32 +1,25 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Dashboard.module.css";
-import { colors } from "../../utils/colors"
 import { Redirect } from "react-router-dom";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import Main from "../../components/Main";
 import Nav from "../../components/Nav";
 import { useDashboard } from "../../hooks/useDashboard";
+import { useContactListContext } from "../../hooks/useContactListContext";
 
 const Dashboard = () => {
-    const { contactList, user, setContactListApp } = useDashboard();
+    const { state, dispatch } = useContactListContext();
 
-    const contactsWithColors = useMemo(() => {
-        let newArray = [];
-        for(let item of (contactList || [])) {
-            newArray.push({
-                ...item,
-                color: colors[Math.floor(Math.random() * colors.length)]
-            });
-        }
-
-        return newArray;
-    }, [contactList]);
+    const { contactList, handleDelete, fetchContacts, disabled, setDisabled, handleFormSubmit } = useDashboard(state, dispatch);
 
     const [contactId, setContactId] = useState(0);
-    const [disabled, setDisabled] = useState(true);
 
-    const loggedIn = user.email;
+    const loggedIn = state.user.email;
+
+    useEffect(() => {
+        fetchContacts();
+    }, [fetchContacts]);
 
     if(!loggedIn) {
         return <Redirect to="/login" />
@@ -37,51 +30,17 @@ const Dashboard = () => {
         setDisabled(true);
     };
 
-    const handleDelete = (id) => {
-        setContactListApp(prevState => {
-            const newContactList = prevState.contactList.filter(item => item.id !== id);
-            return {
-                ...prevState,
-                contactList: [...newContactList]
-            }
-
-        })
-    };
-
-    const handleFormSubmit = (id, firstName, lastName, email, category) => {
-        setContactListApp(prevState => {
-            const newContactList = prevState.contactList.map(obj => {
-                if(obj.id === id) {
-                    return {
-                        id,
-                        firstName,
-                        lastName,
-                        email,
-                        category: category.label
-                    }
-                }
-
-                return obj;
-            });
-            
-            return {
-                ...prevState,
-                contactList: [...newContactList]
-            }
-
-        });
-        setDisabled(true);
-    }
-
-    const sidebarContact = contactsWithColors.find(item => item.id === contactId);
-    const categories = [...new Set((contactsWithColors || []).map(({ category }) => category))];
+    const sidebarContact = contactList.find(item => item.id === contactId);
+    const categories = [...new Set((contactList || []).map(({ category }) => category))];
 
     return (
         <div className={styles.dashboardPage}>
             <Header />
             <Nav />
-            <Main contactList={contactsWithColors} handleContactClick={handleContactClick} categories={categories} />
-            <Sidebar contact={sidebarContact} categories={categories} disabled={disabled} setDisabled={setDisabled} handleDelete={handleDelete} handleFormSubmit={handleFormSubmit} />
+            <Main contactList={contactList} handleContactClick={handleContactClick} categories={categories} />
+            {sidebarContact && (
+                <Sidebar contact={sidebarContact} categories={categories} disabled={disabled} setDisabled={setDisabled} handleDelete={handleDelete} handleFormSubmit={handleFormSubmit} />
+            )}
         </div>
     )
 };
