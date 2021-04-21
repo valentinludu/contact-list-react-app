@@ -1,17 +1,38 @@
-import { useEffect } from "react";
-import { useContactListContext } from "./useContactListContext";
+import { useState, useCallback } from "react";
 import { mockContacts } from "../utils/mocks/mockContacts";
+import { wait } from "../utils/wait";
 
-export const useDashboard = () => {
-    const { contactListApp, setContactListApp } = useContactListContext();
-    const user = contactListApp.user;
+export const useDashboard = (state, dispatch) => {
 
-    useEffect(() => {
-        setContactListApp(prevState => ({
-            ...prevState,
-            contactList: mockContacts
-        }));
-    }, [setContactListApp]);
+    const [disabled, setDisabled] = useState(true);
+    
+    const user = state.user;
 
-    return { user, contactList: contactListApp.contactList, setContactListApp }
+    const handleDelete = (id) => {      
+        wait(1000, id).then(data => {
+            dispatch({type: "DELETE_CONTACT", payload: data});
+        }).catch(err => {
+            console.log(err);
+        });
+    };
+
+    const fetchContacts = useCallback(() => {
+        wait(1000, mockContacts).then(data => {
+            dispatch({ type: "GET_CONTACTS", payload: data });
+        }).catch(err => {
+            console.log(err);
+        });
+    }, [dispatch]);
+
+    const handleFormSubmit = (contact) => {
+        wait(1000, contact).then(data => {
+            dispatch({ type: "UPDATE_CONTACT", payload: data });
+            setDisabled(true);
+        }).catch(err => {
+            setDisabled(false);
+            console.log(err);
+        });
+    }
+
+    return { user, contactList: state.contactList, fetchContacts, handleDelete, handleFormSubmit, disabled, setDisabled }
 }

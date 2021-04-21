@@ -7,10 +7,10 @@ import styles from  "./Login.module.css";
 import { useContactListContext } from "../../hooks/useContactListContext";
 
 const Login = () => {
-    const { contactListApp, setContactListApp } = useContactListContext();
-    const loggedIn = contactListApp.user.email;
+    const { state, dispatch } = useContactListContext();
+    const loggedIn = state.user.email;
 
-    const { loading, handleLoginSubmit } = useLogin(setContactListApp);
+    const { loading, handleLoginSubmit } = useLogin(dispatch);
 
     if(loggedIn) {
         return <Redirect to="/dashboard" />
