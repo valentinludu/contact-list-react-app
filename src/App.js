@@ -15,7 +15,7 @@ const App = () => {
   
   return (
     <ContactListContext.Provider value={{ state, dispatch }}>
-      <Router>
+      <Router basename="/contact-list-react-app/">
         <Switch>
           <Route path="/login">
             <Login />
