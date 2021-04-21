@@ -17,13 +17,13 @@ const App = () => {
     <ContactListContext.Provider value={{ state, dispatch }}>
       <Router>
         <Switch>
-          <Route exact path="/login">
+          <Route path="/login">
             <Login />
           </Route>
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-          <Route exact path="/">
+          <Route path="/">
             <Home />
           </Route>
         </Switch>
