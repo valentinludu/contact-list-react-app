@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer  } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,18 +8,13 @@ import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Dashboard from './Pages/Dashboard';
 import ContactListContext from "./contexts/ContactListContext";
+import { reducer, initialState } from "./contexts/reducer";
 
 const App = () => {
-  const [contactListApp, setContactListApp] = useState({
-    user: {
-      email: "",
-    },
-    isLoggedIn: "",
-    list: ""
-  });
+  const [state, dispatch] = useReducer(reducer, initialState);
   
   return (
-    <ContactListContext.Provider value={{ contactListApp, setContactListApp }}>
+    <ContactListContext.Provider value={{ state, dispatch }}>
       <Router>
         <Switch>
           <Route exact path="/login">
