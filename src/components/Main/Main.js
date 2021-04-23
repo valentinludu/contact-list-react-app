@@ -2,14 +2,21 @@ import { useState } from "react";
 import Button from "../Button";
 import styles from "./Main.module.css";
 
-const Main = ({ contactList, handleContactClick, categories }) => {
+const Main = ({ contactList, handleContactClick, categories, contactId, setContactId }) => {
     const [showItems, setShowItems] = useState(3);
     const [activeFilter, setActiveFilter] = useState("ALL");
-
-    const handleFilterClick = (e) => setActiveFilter(e.target.innerText);
-    const handleLoadMore = () => setShowItems(prevState => prevState + 3);
-
+    
     if(!contactList) return null;
+
+    const categoryContacts = contactList.filter(contact => (contact.category.toLowerCase() === activeFilter.toLowerCase() || activeFilter === "ALL" ));
+    const visibleContacts = categoryContacts.slice(0, showItems);
+
+    const handleFilterClick = (e) => {
+        setActiveFilter(e.target.innerText);
+        setShowItems(3);
+        setContactId(null);
+    };
+    const handleLoadMore = () => setShowItems(prevState => prevState + 3);
 
     return (
         <main className={styles.main}>
@@ -23,15 +30,15 @@ const Main = ({ contactList, handleContactClick, categories }) => {
             </div>
             <div className={styles.contacts}>
                 <ul>
-                    {contactList.slice(0, showItems).map(contact => (
-                        <li key={contact.id} onClick={() => handleContactClick(contact.id)}>
+                    {visibleContacts.filter(contact => (contact.category.toLowerCase() === activeFilter.toLowerCase() || activeFilter === "ALL" )).map(contact => (
+                        <li key={contact.id} onClick={() => handleContactClick(contact.id)} className={contact.id === contactId ? styles.activeContact : ""}>
                             <span className={styles.initials} style={{ background: contact.color}}>{`${contact.firstName[0]}${contact.lastName[0]}`}</span>
                             <span className={styles.name}>{`${contact.firstName} ${contact.lastName}`}</span>
                         </li>
                     ))}
                 </ul>
                 <div className={styles.mainBottom}>
-                    {showItems < contactList.length ? (
+                    {visibleContacts.length < categoryContacts.length ? (
                         <Button buttonBg="#011393" onClick={handleLoadMore}>Load more</Button>
                     ) : (
                         <p>You’ve reached the end of the list.</p>

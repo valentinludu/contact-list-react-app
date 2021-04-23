@@ -1,13 +1,10 @@
 import Select from "react-select";
-import { useField } from "formik";
 
-const SelectField = ({ name, ...selectProps }) => {
-    const [field, , helpers] = useField(name);
-
+const SelectField = ({ name, options, field, form, disabled, ...selectProps }) => {
     const customStyles = {
         control: () => ({
             display: "flex",
-            padding: "15px 20px",
+            padding: "11px 20px",
             border: "1px solid #c4c4c4",
             borderRadius: "24px",
             marginBottom: "32px",
@@ -26,9 +23,13 @@ const SelectField = ({ name, ...selectProps }) => {
     return (
         <Select
             styles={customStyles}
-            value={field.defaultValue}
-            onChange={(v) => helpers.setValue(v)}
-            onBlur={() => helpers.setTouched(true)}
+            options={options}
+            name={field.name}
+            value={options ? options.find(option => option.value === field.value.value) : ''}
+            onChange={option => form.setFieldValue(field.name, option)}
+            onBlur={field.onBlur}
+            isSearchable={false}
+            isDisabled={disabled}
             {...selectProps}
         />
     )
