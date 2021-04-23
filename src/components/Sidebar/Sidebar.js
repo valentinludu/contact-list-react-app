@@ -1,4 +1,4 @@
-import { Formik, Form } from "formik";
+import { Formik, Form, Field } from "formik";
 import Button from "../Button";
 import FieldInput from "../FieldInput";
 import * as Yup from "yup";
@@ -20,10 +20,13 @@ const Sidebar = ({ contact, categories, disabled, setDisabled, handleDelete, han
         category:  Yup.string().required('Please, select office'),
       });
 
+    const mappedCategories = categories.map(category => ({ label: category, value: category.toLowerCase()}));
+    const initialCategory = { label: category, value: category.toLowerCase() };
+
     return (
         <aside className={styles.sidebar}>
             <Formik
-                initialValues={{ firstName: firstName, lastName: lastName, email: email, category: category }}
+                initialValues={{ firstName: firstName, lastName: lastName, email: email, category: initialCategory }}
                 validationSchema={validationSchema}
                 enableReinitialize={true}
             >
@@ -54,11 +57,7 @@ const Sidebar = ({ contact, categories, disabled, setDisabled, handleDelete, han
                         <FieldInput name="email" error={errors.email} disabled={isSubmitting || disabled} />
                         <FieldError error={errors.email} />
                         <FieldLabel htmlFor="category">Category</FieldLabel>
-                        <SelectField
-                            name="category"
-                            disabled={isSubmitting || disabled}
-                            options={categories}
-                        />
+                        <Field name="category" component={SelectField} options={mappedCategories} disabled={isSubmitting || disabled} />
                         {!disabled && (
                             <Button buttonBg="#011393" type="button" onClick={() => handleDelete(id)} disabled={isSubmitting}>Delete</Button>
                         )}
