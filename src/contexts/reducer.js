@@ -29,7 +29,7 @@ export const reducer = (state, action) => {
                     firstName,
                     lastName,
                     email,
-                    category
+                    category: category.label
                 }
             }
 

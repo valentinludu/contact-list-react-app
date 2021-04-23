@@ -37,7 +37,7 @@ const Dashboard = () => {
         <div className={styles.dashboardPage}>
             <Header />
             <Nav />
-            <Main contactList={contactList} handleContactClick={handleContactClick} categories={categories} />
+            <Main contactList={contactList} handleContactClick={handleContactClick} categories={categories} setContactId={setContactId} contactId={contactId} />
             {sidebarContact && (
                 <Sidebar contact={sidebarContact} categories={categories} disabled={disabled} setDisabled={setDisabled} handleDelete={handleDelete} handleFormSubmit={handleFormSubmit} />
             )}
