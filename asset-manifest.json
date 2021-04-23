@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/contact-list-react-app/static/css/main.d0810e1a.chunk.css",
-    "main.js": "/contact-list-react-app/static/js/main.1568ef98.chunk.js",
-    "main.js.map": "/contact-list-react-app/static/js/main.1568ef98.chunk.js.map",
-    "runtime-main.js": "/contact-list-react-app/static/js/runtime-main.4e7acd86.js",
-    "runtime-main.js.map": "/contact-list-react-app/static/js/runtime-main.4e7acd86.js.map",
-    "static/js/2.b0d55ef5.chunk.js": "/contact-list-react-app/static/js/2.b0d55ef5.chunk.js",
-    "static/js/2.b0d55ef5.chunk.js.map": "/contact-list-react-app/static/js/2.b0d55ef5.chunk.js.map",
-    "static/js/3.1121ce8c.chunk.js": "/contact-list-react-app/static/js/3.1121ce8c.chunk.js",
-    "static/js/3.1121ce8c.chunk.js.map": "/contact-list-react-app/static/js/3.1121ce8c.chunk.js.map",
+    "main.css": "/contact-list-react-app/static/css/main.a14e6758.chunk.css",
+    "main.js": "/contact-list-react-app/static/js/main.fea2d61c.chunk.js",
+    "main.js.map": "/contact-list-react-app/static/js/main.fea2d61c.chunk.js.map",
+    "runtime-main.js": "/contact-list-react-app/static/js/runtime-main.6bcd9ad7.js",
+    "runtime-main.js.map": "/contact-list-react-app/static/js/runtime-main.6bcd9ad7.js.map",
+    "static/js/2.a503b8f8.chunk.js": "/contact-list-react-app/static/js/2.a503b8f8.chunk.js",
+    "static/js/2.a503b8f8.chunk.js.map": "/contact-list-react-app/static/js/2.a503b8f8.chunk.js.map",
+    "static/js/3.5bca94c2.chunk.js": "/contact-list-react-app/static/js/3.5bca94c2.chunk.js",
+    "static/js/3.5bca94c2.chunk.js.map": "/contact-list-react-app/static/js/3.5bca94c2.chunk.js.map",
     "index.html": "/contact-list-react-app/index.html",
-    "static/css/main.d0810e1a.chunk.css.map": "/contact-list-react-app/static/css/main.d0810e1a.chunk.css.map",
-    "static/js/2.b0d55ef5.chunk.js.LICENSE.txt": "/contact-list-react-app/static/js/2.b0d55ef5.chunk.js.LICENSE.txt",
+    "static/css/main.a14e6758.chunk.css.map": "/contact-list-react-app/static/css/main.a14e6758.chunk.css.map",
+    "static/js/2.a503b8f8.chunk.js.LICENSE.txt": "/contact-list-react-app/static/js/2.a503b8f8.chunk.js.LICENSE.txt",
     "static/media/edit_icon.31a7fa8a.svg": "/contact-list-react-app/static/media/edit_icon.31a7fa8a.svg",
     "static/media/icon_error.8d19d611.svg": "/contact-list-react-app/static/media/icon_error.8d19d611.svg",
     "static/media/Login.module.css": "/contact-list-react-app/static/media/phone_app_hero.c813549d.png",
@@ -20,9 +20,9 @@
     "static/media/search_icon.900b1b5a.svg": "/contact-list-react-app/static/media/search_icon.900b1b5a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4e7acd86.js",
-    "static/js/2.b0d55ef5.chunk.js",
-    "static/css/main.d0810e1a.chunk.css",
-    "static/js/main.1568ef98.chunk.js"
+    "static/js/runtime-main.6bcd9ad7.js",
+    "static/js/2.a503b8f8.chunk.js",
+    "static/css/main.a14e6758.chunk.css",
+    "static/js/main.fea2d61c.chunk.js"
   ]
 }
