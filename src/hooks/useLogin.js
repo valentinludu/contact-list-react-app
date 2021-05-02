@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { wait } from "../utils/wait";
+import { loginUser } from "../contexts/actions";
 
 export const useLogin = (dispatch) => {
     const [loading, setLoading] = useState(false);
-
-    const loginUser = (email) => ({ type: "LOGIN_USER", payload: email })
 
     const handleLoginSubmit = (values) => {
         setLoading(true);
